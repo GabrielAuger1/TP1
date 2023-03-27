@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="container text-center">
+    <h2 class="my-5 h2">Services Offerts</h2>
+    <form class="dropdown" method="get" action="/service/">
+        <label class="w-100" for="dropdownMenuButton">Veuillez choisir:</label>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+            Services
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="dropdown-menu">
+            {% for service in services %}
+            <input type="submit" class="dropdown-item" id="{{ service }}" name="service" value="{{ service }}">
+            {% endfor %}
+        </div>
+    </form>
+</section>
+
+{% endblock %}
